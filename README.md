@@ -1,6 +1,5 @@
 # dgdg
 
-
 ## Project setup
 ```
 npm install
