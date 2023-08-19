@@ -1,15 +1,20 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHistory, createRouter } from "vue-router"
 import HelloWorld from './components/HelloWorld'
 import DGDG from './components/DGDG'
+import MainPage from './components/MainPage'
 
 const routes = [
   {
     path: "/",
-    component: HelloWorld,
+    component: DGDG,
   },
   {
     path: "/DGDG",
-    component: DGDG,
+    component: HelloWorld,
+  },
+  {
+    path: '/main',
+    component: MainPage,
   }
 ];
 
