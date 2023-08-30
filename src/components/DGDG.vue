@@ -64,7 +64,7 @@ export default {
   font-weight: bold;
 }
 .kakao-login-button {
-  background-color: #1b0fbd;
+  background-color: blue;
 }
 
 .normal-login-button {
