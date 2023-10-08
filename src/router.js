@@ -1,14 +1,9 @@
-import { createWebHistory, createRouter } from "vue-router";
-import HelloWorld from './components/HelloWorld'
+import { createWebHistory, createRouter } from "vue-router"
 import DGDG from './components/DGDG'
 
 const routes = [
   {
     path: "/",
-    component: HelloWorld,
-  },
-  {
-    path: "/DGDG",
     component: DGDG,
   }
 ];
