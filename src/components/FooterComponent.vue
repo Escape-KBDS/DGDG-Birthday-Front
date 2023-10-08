@@ -6,15 +6,13 @@
       <!-- 친구 버튼 목록 -->
       <div class="friends" ref="friendsContainer">
         <!-- 친구 버튼 세트 -->
-        <div class="friend-set" v-for="(friend, index) in visibleFriends" :key="friend.id">
+        <div class="friend-set" v-for="(friend) in visibleFriends" :key="friend.id">
           <!-- 첫 번째 친구인 경우 > 버튼 표시 -->
-          <div v-if="index === 0" class="scroll-right-button">&#8250;</div>
           <div class="story-button">
             <button class="rounded-button"></button>
           </div>
           <div class="friend-name">{{ friend.name }}</div>
           <!-- 마지막 친구인 경우 < 버튼 표시 -->
-          <div v-if="index === visibleFriends.length - 1" class="scroll-left-button">&#8249;</div>
         </div>
       </div>
   
