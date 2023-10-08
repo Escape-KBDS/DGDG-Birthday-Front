@@ -1,96 +1,55 @@
 <template>
-  <div class="container">
-    <div class="centered-content">
-      <h3 class="moving-text ">DGDG Birthday</h3>
-      <div class="logo">
-        <img src="../assets/logo_transparent.png" alt="DGDG BirthDay Logo" style="width: 50%;">
-      </div>
-      <button class="kakao-login-button" style="width: 150px" @click="loginWithKakao">
-        로그인
-      </button>
-      <button class="normal-login-button" style="width: 150px" @click="loginWithKakao">
-        둘러보기
-      </button>
+  <div class="home">
+    <HeaderComponent />
+    <div class="main-content">
+      <AsideComponent />
+      <ContentComponent />
     </div>
+    <FooterComponent />
   </div>
 </template>
+
 <script>
+import HeaderComponent from './HeaderComponent.vue';
+import AsideComponent from './AsideComponent.vue';
+import FooterComponent from './FooterComponent.vue';
+import ContentComponent from './ContentComponent.vue'; // Content 컴포넌트 추가
+
 export default {
-  name: "DGDG",
-  methods: {
-    loginWithKakao() {
-      this.$router.push('/main');
-    }
+  components: {
+    HeaderComponent,
+    AsideComponent,
+    FooterComponent,
+    ContentComponent, // Content 컴포넌트 추가
   },
 };
 </script>
-<style>
 
-@keyframes moveUpDown {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-.moving-text {
-  font-size: 24px;
-  position: relative;
-  animation: moveUpDown 2s ease-in-out infinite;
-}
-.logo {
-  animation: hi;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  animation-delay: 1s;
-  animation-iteration-count: 100;
-}
-.centered-content {
-  text-align: center;
-  padding: 20px;
-}
-.kakao-login-button,
-.normal-login-button {
-  display: block;
-  margin: 10px auto;
-  padding: 8px 16px;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-}
-.kakao-login-button {
-  background-color: blue;
+<style scoped>
+/* 페이지 전체 스타일 조정 */
+.home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 화면 높이를 최소화하여 푸터를 최하단에 고정 */
+  overflow: hidden; /* 스크롤 숨김 */
 }
 
-.normal-login-button {
-  background-color: #007aff;
-}
-.container {
+.main-content {
+  display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #f0f0f0; */
+  margin: 10 auto;
+  padding: 10 auto;
+  height: 100%; /* 높이를 화면 높이에 맞춤 */
+  flex-grow: 1; 
 }
+/* 이하 스타일은 이전과 동일하게 유지 */
 
-/* 모바일 화면에 대한 미디어 쿼리 */
-/* @media (max-width: 768px) {
-    .centered-content {
-      padding: 10px;
-    }
-  
-    .logo {
-      margin-top: 20px;
-    }
-  
-    .kakao-login-button,
-    .normal-login-button {
-      font-size: 12px;
-      padding: 6px 12px;
-    }
-  } */
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
 </style>
-  

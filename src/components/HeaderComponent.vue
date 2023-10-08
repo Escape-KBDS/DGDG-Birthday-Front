@@ -1,50 +1,42 @@
 <template>
-    <div class="header">
-        <ul class="header-button-left">
-            <li>header left</li>
-        </ul>
-        <ul class="header-button-right">
-            <li>header right</li>
-        </ul>
-        <img src="https://t1.daumcdn.net/cfile/tistory/99857F4F5E738F472F" class="logo" />
-    </div>
+  <header>
+    <img src="../assets/logo_transparent.png" class="header-image">
+    <div class="logo">DGDG</div>
+  </header>
 </template>
 
-<script>
-export default {
-    name: 'HeaderComponent',
-}
-</script>
-
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-.header {
-  width: 100%;
-  height: 40px;
-  background-color: white;
-  padding-bottom: 8px;
-  position: sticky;
-  top: 0;
-  font-family: 'Montserrat', sans-serif;
-  display: flex; /* 추가: 헤더 내부 컨텐츠를 가로로 정렬 */
-  justify-content: space-between; /* 추가: 왼쪽, 가운데, 오른쪽 정렬 */
+header {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  max-height: 70px; /* 원하는 높이로 설정 */
+  overflow: hidden; /* 헤더 크기를 넘을 경우 오버플로우를 숨김 */
+}
+
+.header-image {
+  max-width: 100%;
+  max-height: 50px;
+  height: 50%;
 }
 
 .logo {
-  width: 22px;
-  margin: auto;
-  display: block;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 13px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.header-button-left,
-.header-button-right {
+nav ul {
   list-style: none;
-  margin-top: 10px;
   padding: 0;
-  cursor: pointer;
+  display: flex;
+}
+
+nav li {
+  margin-right: 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
 }
 </style>
